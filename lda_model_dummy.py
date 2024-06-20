@@ -242,7 +242,7 @@ mean_lda_acc=[]
 mean_gs_acc=[]
 
 
-for i in range(10): #필요에 따라 반복 횟수 변경 가능
+for i in range(50): #필요에 따라 반복 횟수 변경 가능
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
     # 기존 LDA 모델 정확도
