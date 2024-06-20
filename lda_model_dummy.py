@@ -242,7 +242,7 @@ mean_lda_acc=[]
 mean_gs_acc=[]
 
 
-for i in range(50): #필요에 따라 반복 횟수 변경 가능
+for i in range(10): #필요에 따라 반복 횟수 변경 가능
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
     # 기존 LDA 모델 정확도
@@ -267,6 +267,8 @@ for i in range(50): #필요에 따라 반복 횟수 변경 가능
     print(f"반복 {i+1}: 기존 LDA 모델의 정확도: {lda_acc * 100:.2f}%")
     print(f"반복 {i+1}: GS를 사용한 LDA 모델의 정확도: {gradual_acc * 100:.2f}%")
     print("-" * 50)
+
+    re_plot(X_test_lda, y_test, y_pred_lda, X_test_lda_best, y_pred_gs, i)
 
     # 선택된 피처의 카운트 증가시킨다.
     for feature in best_features:
